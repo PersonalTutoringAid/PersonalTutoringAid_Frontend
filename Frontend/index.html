@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Review Note Generator</title>
+    <script
+      src="https://kit.fontawesome.com/ca154a8af0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./index_style.css" />
+  </head>
+  <body>
+    <div class="container" id="mainContainer">
+      <h1>Custom Review Note Generator</h1>
+      <i class="fa-solid fa-dove logo" onclick="showLogin()"></i>
+      <p class="Inducingtext">Click the bird to login</p>
+
+      <div class="login-container" id="loginContainer">
+        <h2>Login</h2>
+        <input type="text" class="input-field" placeholder="Username" />
+        <input type="password" class="input-field" placeholder="Password" />
+        <button class="btn">Login</button>
+        <p class="toggle-text">
+          Don't have an account?
+          <a href="#" onclick="showRegister()">Register here</a>
+        </p>
+      </div>
+
+
+      <div class="register-container" id="registerContainer">
+        <h2>Register</h2>
+        <input
+          type="text"
+          id="registerUsername"
+          class="input-field"
+          placeholder="Username"
+        />
+        <input
+          type="password"
+          id="registerPassword"
+          class="input-field"
+          placeholder="Password"
+        />
+        <select id="registerUserType" class="input-field">
+          <option value="Select">구분</option>
+          <option value="Tutor">선생님</option>
+          <option value="Tutee">학생</option>
+          <option value="Ordinary">일반</option>
+        </select>
+        <button class="btn" onclick="registerUser()">Register</button>
+        <p class="toggle-text">
+          Already have an account?
+          <a href="#" onclick="showLogin()">Login here</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function showLogin() {
+        document.getElementById("loginContainer").style.display = "block";
+        document.getElementById("registerContainer").style.display = "none";
+        document.querySelector(".logo").style.pointerEvents = "none";
+        document.querySelector(".Inducingtext").style.display = "none";
+      }
+
+      function showRegister() {
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("registerContainer").style.display = "block";
+      }
+
+      function registerUser() {
+        const username = document
+          .getElementById("registerUsername")
+          .value.trim();
+        const password = document
+          .getElementById("registerPassword")
+          .value.trim();
+        const userType = document.getElementById("registerUserType").value;
+
+        if (!username || !password) {
+          alert("⚠️ Username과 Password를 입력해주세요.");
+          return;
+        }
+
+        const termsAccepted = confirm(
+          "📜 이용 약관 안내 📜\n\n" +
+            "이 서비스는 문제집 문제를 기반으로 오답노트를 제작하는 기능을 제공합니다.\n" +
+            "이 과정에서 발생하는 저작권 문제는 서비스와 무관하며, 사용자의 책임입니다.\n\n" +
+            "✅ 위 내용을 이해하고 동의하시겠습니까?"
+        );
+
+        if (!termsAccepted) {
+          alert("❌ 회원가입이 취소되었습니다.");
+          return;
+        }
+
+        alert("✅ 회원가입이 완료되었습니다!");
+        showLogin();
+      }
+    </script>
+  </body>
+</html>

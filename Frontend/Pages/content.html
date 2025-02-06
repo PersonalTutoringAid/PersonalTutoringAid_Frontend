@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Review Notes</title>
+    <script
+      src="https://kit.fontawesome.com/ca154a8af0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../CSS/content_style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <i class="fa-solid fa-dove" id="main-button"></i>
+        <span class="logo" id="nav-title">네비게이션 제목</span>
+      </div>
+      <button class="fa-solid fa-bars" id="menu-toggle"></button>
+    </nav>
+
+    <aside class="sidebar" id="sidebar">
+      <ul>
+        <li>
+          <a href="my_review_notes.html" data-page="my_review_notes"
+            >나의 오답노트</a
+          >
+        </li>
+        <li>
+          <a href="my_textbooks.html" data-page="my_textbooks">문제집 추가</a>
+        </li>
+        <li>
+          <a href="review_note_generator.html" data-page="review_note_generator"
+            >오답노트 생성</a
+          >
+        </li>
+        <li><a href="#">학생 관리 (튜터용)</a></li>
+      </ul>
+      <footer class="footer">
+        <p>&copy; 2025 My Review Notes. All Rights Reserved.</p>
+        <p>
+          프론트엔드: <strong>지우현</strong>(ChatGPT-assisted) | 백엔드:
+          <strong>지우현</strong>
+        </p>
+        <a href="mailto:forunivjwh@gmail.com" class="email-link">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </footer>
+    </aside>
+
+    <div id="content-area"></div>
+
+    <script src="../JS/content.js"></script>
+    <script>
+      document
+        .getElementById("main-button")
+        .addEventListener("click", function () {
+          loadContent("my_review_notes.html");
+        });
+
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("sidebar").classList.toggle("active");
+        });
+    </script>
+  </body>
+</html>

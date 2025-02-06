@@ -1,0 +1,87 @@
+.generator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
+}
+
+.select-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width: 80%;
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.select-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-item label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.select-item select,
+.select-item input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.generate-btn {
+  background: #2ecc71;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.generate-btn:hover {
+  background: #27ae60;
+}
+
+.add-generator {
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 80px;
+  opacity: 0.2;
+  width: 80px;
+  height: 80px;
+  border: none;
+  cursor: pointer;
+}
+
+.add-generator:hover {
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .generator-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
